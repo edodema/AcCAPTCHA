@@ -21,3 +21,6 @@ Add a default setting in which we assume a user is totally able to use everythin
 ### Gesture
 - Move your head or face into a specific box, box may have different colors.
 - Finger counting.
+
+### Misc
+- Maybe put everything in a Docker image.
