@@ -20,10 +20,15 @@ class VideoCapture:
     def __call__(self, mod: Any, mirror: bool = True):
         while True:
             # Capture the video frame by frame.
-            ret, frame = self.vid.read()
+            _, frame = self.vid.read()
 
             # Call modality on image.
-            mod(frame)
+            out = mod(frame)
+
+            truth = out["truth"]
+            count = out["count"]
+
+            print(truth, count)
 
             # Mirror image.
             if mirror:

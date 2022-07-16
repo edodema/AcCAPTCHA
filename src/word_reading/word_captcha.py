@@ -1,7 +1,7 @@
 from typing import *
 from pathlib import Path
 from src.word_reading.word_recognition import WordRecognition
-from src.utils.word_sampler import WordSampler
+from src.word_reading.word_sampler import WordSampler
 
 
 class WordCAPTCHA:

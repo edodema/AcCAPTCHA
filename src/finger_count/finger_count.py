@@ -46,15 +46,14 @@ class FingerCount:
         self.draw = draw
         self.display = display
 
-    def __call__(self, src: np.ndarray) -> np.ndarray:
+    def __call__(self, src: np.ndarray) -> int:
         """Apply finger counting.
 
         Args:
             src (np.ndarray): Source image.
 
         Returns:
-            np.ndarray: The image with landmark points drawn
-
+            int: The number of fingers counted.
         """
         # Convert imgage to RGB.
         if self.rgb:
@@ -142,14 +141,3 @@ class FingerCount:
             )
 
         return cnt
-
-
-if __name__ == "__main__":
-    HOME_PATH = Path(".")
-    ASSETS_PATH = HOME_PATH / "assets"
-    IMG_PATH = ASSETS_PATH / "five_hand.jpg"
-
-    img = cv.imread(IMG_PATH.as_posix())
-
-    cv.imshow("", img)
-    cv.waitKey(0)
