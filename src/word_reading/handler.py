@@ -1,6 +1,6 @@
 from typing import *
 from pathlib import Path
-from src.speech.word_recognition import WordRecognition
+from src.word_reading.word_recognition import WordRecognition
 from src.utils.word_sampler import WordSampler
 
 
