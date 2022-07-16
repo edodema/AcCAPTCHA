@@ -28,6 +28,7 @@ class VideoCapture:
             truth = out["truth"]
             count = out["count"]
 
+            # TODO: remove
             print(truth, count)
 
             # Mirror image.
