@@ -1,4 +1,7 @@
 numpy
 opencv-python
 mediapipe
+SpeechRecognition
+pyttsx3
+PyAudio
 black

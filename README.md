@@ -1,4 +1,4 @@
-# BeCAPTCHA
+# BeCAPTCHA
 
 ## ToDO
 ### Interface
@@ -15,12 +15,19 @@ Add a default setting in which we assume a user is totally able to use everythin
 - Classify a sound
 
 ### Speech
-- Emit a specific sound.
-- Read something aloud.
+- Recall to install in Docker the correct dependencies: [https://pypi.org/project/SpeechRecognition/#Requirements](https://pypi.org/project/SpeechRecognition/#Requirements)
+#### Read something aloud.
+- Use distorted words
+- We should generate n words and do not care about order.
 
 ### Gesture
 - Move your head or face into a specific box, box may have different colors.
-- Finger counting.
+#### Finger counting.
+- You should hold your position for some seconds and have a mean to get an answer.
+- If it may be too difficult to select a ROI of the correct size you could select a dimension for a given aspect ratio or optionally use quadrants, otherwise pick the dimension of a quadrant and pick it randomly.
 
 ### Misc
 - Maybe put everything in a Docker image.
+- Add a Verification/Validation/Authentication module for each module, it should also take care of the rest e.g. setting a ROI or picking random words.
+- Cite the corpus here [https://github.com/dwyl/english-words](https://github.com/dwyl/english-words)
+- In docker update pip to latest version.
