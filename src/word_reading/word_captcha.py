@@ -4,7 +4,7 @@ from src.word_reading.word_recognition import WordRecognition
 from src.utils.word_sampler import WordSampler
 
 
-class Handler:
+class WordCAPTCHA:
     def __init__(
         self,
         path: Union[str, Path] = "./assets/words.json",
@@ -14,6 +14,16 @@ class Handler:
         verbose: bool = True,
         threshold: float = 0.5,
     ):
+        """Initialize test.
+
+        Args:
+            path (Union[str, Path], optional): JSON file path. Defaults to "./assets/words.json".
+            num_words (int, optional): Number of words to be sampled. Defaults to 5.
+            unique (bool, optional): If true we sample words uniquely. Defaults to True.
+            calibration_time (int, optional): Time needed to calibrate the microphone to noise ambient. Defaults to 1.
+            verbose (bool, optional): If true prints some informations. Defaults to True.
+            threshold (float, optional): Threshold to pass for the test to be true. Defaults to 0.5.
+        """
         self.verbose = verbose
         self.threshold = threshold
 
@@ -28,6 +38,11 @@ class Handler:
         )
 
     def run(self) -> Dict:
+        """Run the CAPTCHA test.
+
+        Returns:
+            Dict: Machine generated correct outputs and human guesses.
+        """
         words_gt = self.ws.sample(self.n, unique=self.unique)
         if self.verbose:
             print("Sampled words: ", words_gt)
@@ -39,6 +54,11 @@ class Handler:
         return self.out
 
     def eval(self) -> bool:
+        """Evaluate if the user passed the test and how.
+
+        Returns:
+            bool: True if the test has been passed.
+        """
         assert self.out, "Before evaluation you need to run the handler."
 
         words_h = set(self.out["human"])
@@ -52,10 +72,3 @@ class Handler:
 
         test = cnt / len(words_m) >= self.threshold
         return test
-
-
-if __name__ == "__main__":
-    handler = Handler(calibration_time=10)
-    handler.run()
-    test = handler.eval()
-    print(test)
