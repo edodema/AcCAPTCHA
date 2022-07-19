@@ -13,6 +13,7 @@ Add a default setting in which we assume a user is totally able to use everythin
 ### Hearing
 - Which sound is louder?
 - Classify a sound
+- Say something you heard.
 
 ### Speech
 - Recall to install in Docker the correct dependencies: [https://pypi.org/project/SpeechRecognition/#Requirements](https://pypi.org/project/SpeechRecognition/#Requirements)
