@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Video Streaming</title>
+</head>
+
+<body>
+
+    {% extends "template.html" %}
+    {% block content %}
+
+    <h1>Finger Counting</h1>
+    <p>sample text</p>
+    <img id="bg" src="{{ url_for('video_feed') }}">
+
+    {% endblock %}
+
+</body>
+
+</html>

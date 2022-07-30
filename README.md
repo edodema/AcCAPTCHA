@@ -5,6 +5,11 @@
 The interface should allow users to configure what devices and modalities they can support when first started, optionally to reconfigure it.
 E.g. sight, hearing, keyboard + mouse.
 Add a default setting in which we assume a user is totally able to use everything.
+- Get the correct modalities.
+- Implement test for modalities
+- Finger count based on modalities.
+- Make it quite big and add a zoom slider.
+- Favicon
 
 ### Sight
 - Classification
@@ -34,3 +39,4 @@ Add a default setting in which we assume a user is totally able to use everythin
 - Cite the corpus here [https://github.com/dwyl/english-words](https://github.com/dwyl/english-words)
 - In docker update pip to latest version.
 - Dialog for many fingers.
+- Explain what directories do, maybe with different readmes depedning on the subdir.

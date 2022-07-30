@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>BeCAPTCHA</title>
+</head>
+
+<!-- * Load JS scripts. -->
+<script type="text/javascript" src="static/js/configure.js" async></script>
+
+<body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <!-- TODO: Write a decent introduction. -->
+    <h2>Configuration</h2>
+    <p>Select which modalities to use.</p>
+
+    <!-- Checkboxes. -->
+    <label for="sight">
+        <input type="checkbox" id="sight" name="mode" value="yes"> Sight
+    </label>
+    <label for="speech">
+        <input type="checkbox" id="speech" name="mode" value="yes"> Speech
+    </label>
+
+    <!-- Submit checkboxes. -->
+    <button id="submit">Submit</button>
+
+    {% endblock %}
+
+</body>
+
+</html>
