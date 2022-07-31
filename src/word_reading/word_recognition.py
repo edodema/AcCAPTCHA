@@ -1,3 +1,4 @@
+from typing import *
 import speech_recognition as sr
 
 
@@ -21,14 +22,14 @@ class WordRecognition:
             "Minimum energy threshold: {:.3f}".format(self.recognizer.energy_threshold)
         )
 
-    def __call__(self, verbose: bool = True) -> list[str]:
+    def __call__(self, verbose: bool = True) -> List[str]:
         """Apply word recognition.
 
         Args:
             verbose (bool, optional): I true print some information. Defaults to True.
 
         Returns:
-            list[str]: List of recognized words.
+            List[str]: List of recognized words.
         """
         audio = self.listen(verbose=verbose)
         words = self.recognize(audio, verbose=verbose)
@@ -49,7 +50,7 @@ class WordRecognition:
             audio = self.recognizer.listen(source=source)
         return audio
 
-    def recognize(self, audio: sr.AudioData, verbose: bool = True) -> list[str]:
+    def recognize(self, audio: sr.AudioData, verbose: bool = True) -> List[str]:
         """Recognize what said.
 
         Args:
@@ -57,14 +58,14 @@ class WordRecognition:
             verbose (bool, optional): If true print some informations. Defaults to True.
 
         Returns:
-            list[str]: A list of recognized words.
+            List[str]: A list of recognized words.
         """
         if verbose:
             print("Recognizing...")
         words = self.google(audio)
         return words
 
-    def google(self, audio: sr.AudioData) -> list[str]:
+    def google(self, audio: sr.AudioData) -> List[str]:
         """Recognize spoken words using the Google API.
 
         Args:
@@ -72,7 +73,7 @@ class WordRecognition:
             verbose (bool, optional): If true print some information. Defaults to True.
 
         Returns:
-            list[str]: A list of recognized words.
+            List[str]: A list of recognized words.
         """
         try:
             text = self.recognizer.recognize_google(audio)

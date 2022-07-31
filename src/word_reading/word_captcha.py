@@ -72,3 +72,9 @@ class WordCAPTCHA:
 
         test = cnt / len(words_m) >= self.threshold
         return test
+
+
+if __name__ == "__main__":
+    captcha = WordCAPTCHA()
+    captcha.run()
+    captcha.eval()
