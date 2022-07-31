@@ -14,16 +14,27 @@
     {% block content %}
 
     <!-- TODO: Write a decent introduction. -->
-    <h2>Configuration</h2>
     <p>Select which modalities to use.</p>
 
     <!-- Checkboxes. -->
-    <label for="sight">
-        <input type="checkbox" id="sight" name="mode" value="yes"> Sight
+    <label for="sight" class="container">
+        Sight
+        <input type="checkbox" id="sight" name="mode" value="yes" checked="checked">
+        <span class="checkmark"></span>
     </label>
-    <label for="speech">
-        <input type="checkbox" id="speech" name="mode" value="yes"> Speech
+
+    <label for="speech" class="container">
+        Speech
+        <input type="checkbox" id="speech" name="mode" value="yes" checked="checked">
+        <span class="checkmark"></span>
     </label>
+
+    <label for="gesture" class="container">
+        Gesture
+        <input type="checkbox" id="gesture" name="mode" value="yes" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+
 
     <!-- Submit checkboxes. -->
     <button id="submit">Submit</button>

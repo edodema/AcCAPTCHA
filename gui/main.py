@@ -1,5 +1,7 @@
 from flask import Flask, render_template, Response
 from src.finger_count.tmp import VideoCamera
+from src.finger_count.finger_captcha import FingerCAPTCHA
+from src.finger_count.video_capture import VideoCapture
 
 app = Flask(__name__)
 
@@ -25,22 +27,18 @@ def configure() -> str:
 
 
 # * Finger counting.
-# @app.route("/finger-count")
-# def video():
-#     return render_template("finger_count.html")
+@app.route("/finger-count")
+def video():
+    return render_template("finger_count.html")
 
 
-# def gen(camera):
-#     while True:
-#         frame = camera.get_frame()
-#         yield (b"--frame\r\n" b"Content-Type: image/jpeg\r\n\r\n" + frame + b"\r\n\r\n")
-
-
-# @app.route("/video_feed")
-# def video_feed():
-#     return Response(
-#         gen(VideoCamera()), mimetype="multipart/x-mixed-replace; boundary=frame"
-#     )
+@app.route("/video_feed")
+def video_feed():
+    vc = VideoCapture(web=True)
+    captcha = FingerCAPTCHA()
+    return Response(
+        vc(captcha.run), mimetype="multipart/x-mixed-replace; boundary=frame"
+    )
 
 
 if __name__ == "__main__":

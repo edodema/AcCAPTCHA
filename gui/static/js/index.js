@@ -11,11 +11,11 @@ function read_more() {
     if (article.className == "open") {
         // Read less.
         article.className = "";
-        button.innerHTML = "Show more";
+        read_bt.innerHTML = "Show more";
     } else {
         // Read more.
         article.className = "open";
-        button.innerHTML = "Show less";
+        read_bt.innerHTML = "Show less";
     }
 };
 

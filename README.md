@@ -10,6 +10,8 @@ Add a default setting in which we assume a user is totally able to use everythin
 - Finger count based on modalities.
 - Make it quite big and add a zoom slider.
 - Favicon
+- Dyslexia font, dark mode, invert color.
+- search for colorblind colors, add checkboxes for that too maybe or use a universal colorbind palette (worst case)
 
 ### Sight
 - Classification

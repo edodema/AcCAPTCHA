@@ -166,8 +166,8 @@ class FingerCAPTCHA:
 
 
 if __name__ == "__main__":
-    vc = VideoCapture()
+    vc = VideoCapture(web=True)
     captcha = FingerCAPTCHA()
     vc(captcha.run)
-    test = captcha.eval()
-    print(test)
+    # test = captcha.eval()
+    # print(test)
