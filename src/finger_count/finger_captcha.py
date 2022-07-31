@@ -163,11 +163,3 @@ class FingerCAPTCHA:
         print(out)
         test = (out - self.threshold) <= self.n and self.n <= (out + self.threshold)
         return test
-
-
-if __name__ == "__main__":
-    vc = VideoCapture(web=True)
-    captcha = FingerCAPTCHA()
-    vc(captcha.run)
-    # test = captcha.eval()
-    # print(test)

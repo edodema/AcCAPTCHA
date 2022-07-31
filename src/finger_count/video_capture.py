@@ -2,65 +2,54 @@ from typing import *
 import cv2 as cv
 import numpy as np
 
-# TODO: Add as a parameter a function or class, we will use that function for any of them.
-# TODO: Add window resolution.
-# TODO: Fix for different modalities.
-
 
 class VideoCapture:
-    def __init__(self, web: bool = False, quit_key: str = "q"):
+    def __init__(self, quit_key: str = "q"):
         """Initialize object.
 
         Args:
-            web (bool, optional): Use video capture in a web browser. Defaults to False.
             quit_key (str, optional): Key that interrupts video capture when pressed. Defaults to "q".
         """
         self.vid = cv.VideoCapture(0)
-        self.web = web
         self.esc = quit_key
 
-    def __call__(self, mod: Any, mirror: bool = True):
-        if self.web:
-            # * Online.
-            while True:
-                _, frame = self.vid.read()
+    def __call__(self, f: Any, mirror: bool = True):
+        """Run video capture.
 
-                # * Process image.
-                frame = self.process(frame, mod, mirror)
+        Args:
+            f (Any): Function to apply to frames.
+            mirror (bool, optional): If true mirror image. Defaults to True.
 
-                # * Return byte encoded image.
-                _, jpg = cv.imencode(".jpg", frame)
-                jpg_b = jpg.tobytes()
+        Yields:
+            Generator[bytes]: _description_
+        """
+        while True:
+            _, frame = self.vid.read()
 
-                yield (
-                    b"--frame\r\n"
-                    b"Content-Type: image/jpeg\r\n\r\n" + jpg_b + b"\r\n\r\n"
-                )
-        else:
-            # * Offline
-            while True:
-                # Capture the video frame by frame.
-                _, frame = self.vid.read()
+            # * Process image.
+            frame = self.process(frame, f, mirror)
 
-                # * Process image.
-                frame = self.process(frame, mod, mirror)
+            # * Return byte encoded image.
+            _, jpg = cv.imencode(".jpg", frame)
+            jpg_b = jpg.tobytes()
 
-                # Display the resulting frame
-                cv.imshow("", frame)
+            yield (
+                b"--frame\r\n" b"Content-Type: image/jpeg\r\n\r\n" + jpg_b + b"\r\n\r\n"
+            )
 
-                # Quitting button.
-                if cv.waitKey(1) & 0xFF == ord(self.esc):
-                    break
+    def process(self, frame: np.ndarray, f: Any, mirror: bool) -> np.ndarray:
+        """Process frame.
 
-            # Release the capture object.
-            self.vid.release()
-            # Destroy all the windows
-            cv.destroyAllWindows()
-            return None
+        Args:
+            frame (np.ndarray): Input frame.
+            mod (Any): Function to apply to frame.
+            mirror (bool): Mirror video.
 
-    def process(self, frame: np.ndarray, mod: Any, mirror: bool) -> np.ndarray:
+        Returns:
+            np.ndarray: Processed frame.
+        """
         # Call modality on image.
-        out = mod(frame)
+        out = f(frame)
 
         truth = out["truth"]
         count = out["count"]
