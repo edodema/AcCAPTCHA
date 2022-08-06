@@ -1,5 +1,6 @@
 from typing import *
 import random
+import json
 import cv2 as cv
 import numpy as np
 
@@ -23,6 +24,8 @@ class FingerCAPTCHA:
         n_fingers: int = 5,
         color_roi: tuple = (255, 0, 0),
         thickness_roi: int = 3,
+        log: str = "./gui/static/logs/finger_count.json",
+        acceptance_threhsold: int = 100,
     ):
         """Initialize CAPTCHA test.
 
@@ -40,6 +43,8 @@ class FingerCAPTCHA:
             n_fingers (int, optional): Number of fingers in one hand. Defaults to 5.
             color_roi (tuple, optional): Color of the ROI rectangle. Defaults to (255, 0, 0).
             thickness_roi (int, optional): Thickness of the ROI rectangle. Defaults to 3.
+            log (str, optional): File in which we log some informations, used to communicate with the frontend. Defaults to "./logs/finge_count.json".
+            acceptance_threshold (int, optional): Minimum number of correct guesses needed to consider the test passed. Defaults to 100.
         """
         self.width = width_roi
         self.height = height_roi
@@ -47,6 +52,8 @@ class FingerCAPTCHA:
         self.n_fingers = n_fingers
         self.color_roi = color_roi
         self.thickness_roi = thickness_roi
+        self.log_path = log
+        self.acceptance_threshold = acceptance_threhsold
 
         # * Finger counting.
         self.fc = FingerCount(
@@ -60,8 +67,14 @@ class FingerCAPTCHA:
         )
 
         # * A flag to sample ROI's corners.
-        self.number = True
         self.corners = True
+        self.target = self.sample_number(n_fingers=self.n_fingers)
+
+        # * Dictionary used to store log data.
+        self.log_data = {"target": self.target, "preds": []}
+        # Save JSON, since we need to print the number.
+        with open(self.log_path, "w") as f:
+            json.dump(self.log_data, f, indent=-1)
 
         # * Accumulators to get the correct counts.
         self.counts = []
@@ -75,18 +88,28 @@ class FingerCAPTCHA:
         Returns:
             Dict: Output dictionary consisting of the original image, chosen and predicted number.
         """
-        if self.number:
-            self.n = self.sample_number(n_fingers=self.n_fingers)
-            self.number = False
-
         img = self.draw_roi(src)
         roi = img[self.y : self.v, self.x : self.u]
 
         count = self.fc(roi)
+
         if count > -1:
             self.counts.append(count)
+            # Add estimated count to the log.
+            self.log_data["preds"] += [count]
 
-        return {"img": img, "count": count, "truth": self.n}
+        # * Save file when we reach a threshold.
+        # Filter numbers, saving only ones that match the target.
+        filtered = list(
+            filter(lambda pred: pred == self.target, self.log_data["preds"])
+        )
+        if len(filtered) >= self.acceptance_threshold:
+            print(True)
+        else:
+            # TODO For some reason this is different from the file read.
+            print(False, len(filtered), count, self.target)
+
+        return {"img": img, "count": count, "truth": self.target}
 
     def sample_number(self, n_fingers: int = 5) -> int:
         """Sample a number that should be shown to the camera.

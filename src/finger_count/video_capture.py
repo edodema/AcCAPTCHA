@@ -54,12 +54,8 @@ class VideoCapture:
         truth = out["truth"]
         count = out["count"]
 
-        # TODO: remove
-        # print(truth, count)
-
         # Mirror image.
         if mirror:
             frame = cv.flip(src=frame, flipCode=1)
 
-        print(type(frame))
         return frame

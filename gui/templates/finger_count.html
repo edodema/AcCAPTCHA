@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Video Streaming</title>
+    <!-- * Load JS script. -->
+    <script type="text/javascript" src="static/js/finger_count.js" async></script>
 </head>
 
 <body>
@@ -11,9 +13,17 @@
     {% extends "template.html" %}
     {% block content %}
 
-    <h1>Finger Counting</h1>
-    <p>sample text</p>
+
+    <h2 id="target"></h2>
+    <p id="timer"></p>
     <img id="bg" src="{{ url_for('video') }}">
+    <!-- TODO: Make it less more maybe -->
+    <p>Small introduction that says what to do.</p>
+
+    <script>
+        setInterval(countdown, 1000);
+        show_target();
+    </script>
 
     {% endblock %}
 
