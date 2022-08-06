@@ -40,5 +40,12 @@ def video():
     )
 
 
+# * Word reading.
+# * Finger counting.
+@app.route("/word-reading")
+def word_reading():
+    return render_template("word_reading.html")
+
+
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8080, debug=True)
