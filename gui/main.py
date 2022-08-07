@@ -3,6 +3,8 @@ from src.finger_count.finger_captcha import FingerCAPTCHA
 from src.finger_count.video_capture import VideoCapture
 
 app = Flask(__name__)
+# ! Refresh does not change the ground truth, move that into video(), yet it yields to wrong JSON reading.
+finger_captcha = FingerCAPTCHA()
 
 
 @app.route("/")
@@ -34,9 +36,8 @@ def finger_count():
 @app.route("/finger-count/video")
 def video():
     vc = VideoCapture()
-    captcha = FingerCAPTCHA()
     return Response(
-        vc(captcha.run), mimetype="multipart/x-mixed-replace; boundary=frame"
+        vc(finger_captcha.run), mimetype="multipart/x-mixed-replace; boundary=frame"
     )
 
 

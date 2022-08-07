@@ -1,11 +1,12 @@
 // * Variables
 const timer = document.querySelector("#timer");
 const target = document.querySelector("#target");
+// The page to which we will be redirected after an alert.
+const window_alert = "/";
 // 5 minutes.
 let duration = 5 * 60;
 // JSON file path.
 const path = "static/logs/finger_count.json";
-
 
 
 // * Function.
@@ -15,7 +16,7 @@ function countdown() {
         alert("Time expired. Please take another test.");
         // Go back to another page.
         // TODO: I temporarily set the homepage.
-        window.location = "/";
+        window.location = window_alert;
     }
     // Display minutes and seconds.
     let minutes = Math.floor((duration / 60));
@@ -33,7 +34,30 @@ async function show_target() {
     let obj;
     const res = await fetch(path)
     obj = await res.json();
-    // TODO For some reason this is different from the file read.
-    console.log(obj);
+
+    // Show target number.
     target.innerHTML = obj.target;
 }
+
+async function check_test() {
+    // Load JSON file.
+    let obj;
+    const res = await fetch(path)
+    obj = await res.json();
+
+    // The test is passed, go back somewhere.
+    if (obj.passed == 1) {
+        // TODO: Page that says "the test is finished".
+        alert("The test is passed. You will be redirected to the home page.");
+        // Go back to another page.
+        // TODO: I temporarily set the homepage.
+        window.location = window_alert;
+    }
+}
+
+// ! Alternative that uses JQuery, should be bette but an internet connection is needed.
+// function show_target() {
+//     $.getJSON(path, function (json) {
+//         target.innerHTML = json.target;
+//     });
+// }

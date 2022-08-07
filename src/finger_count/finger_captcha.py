@@ -25,7 +25,7 @@ class FingerCAPTCHA:
         color_roi: tuple = (255, 0, 0),
         thickness_roi: int = 3,
         log: str = "./gui/static/logs/finger_count.json",
-        acceptance_threhsold: int = 100,
+        acceptance_threhsold: int = 50,
     ):
         """Initialize CAPTCHA test.
 
@@ -71,10 +71,9 @@ class FingerCAPTCHA:
         self.target = self.sample_number(n_fingers=self.n_fingers)
 
         # * Dictionary used to store log data.
-        self.log_data = {"target": self.target, "preds": []}
+        self.log_data = {"target": self.target, "passed": 0, "preds": []}
         # Save JSON, since we need to print the number.
-        with open(self.log_path, "w") as f:
-            json.dump(self.log_data, f, indent=-1)
+        self.save_json(path=self.log_path, data=self.log_data)
 
         # * Accumulators to get the correct counts.
         self.counts = []
@@ -104,9 +103,10 @@ class FingerCAPTCHA:
             filter(lambda pred: pred == self.target, self.log_data["preds"])
         )
         if len(filtered) >= self.acceptance_threshold:
-            print(True)
+            self.log_data["passed"] = 1
+            self.save_json(path=self.log_path, data=self.log_data)
         else:
-            # TODO For some reason this is different from the file read.
+            # TODO: Remove
             print(False, len(filtered), count, self.target)
 
         return {"img": img, "count": count, "truth": self.target}
@@ -172,6 +172,7 @@ class FingerCAPTCHA:
         )
         return img
 
+    # TODO Don't think is needed, probably can remove.
     def eval(self) -> bool:
         """Test CAPTCHA outcome.
 
@@ -186,3 +187,13 @@ class FingerCAPTCHA:
         print(out)
         test = (out - self.threshold) <= self.n and self.n <= (out + self.threshold)
         return test
+
+    def save_json(self, path: str, data: Dict):
+        """Save a dictionary as a JSON file.
+
+        Args:
+            path (str): Path where the file will be saved.
+            data (Dict): Log data as a dictionary.
+        """
+        with open(path, "w") as f:
+            json.dump(data, f, indent=-1)
