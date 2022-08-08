@@ -1,4 +1,3 @@
-from operator import index
 from typing import *
 from pathlib import Path
 import json
@@ -7,8 +6,10 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
 
-class ImageClassification:
-    def __init__(self, path: Union[str, Path] = "./assets/images/index.json"):
+class TextClassification:
+    def __init__(
+        self, path: Union[str, Path] = "./gui/static/assets/captcha/index.json"
+    ):
         self.path = Path(".") / path
         self.data = self._load_data()
 
@@ -51,8 +52,7 @@ class ImageClassification:
 
 
 if __name__ == "__main__":
-    tc = ImageClassification()
-    path, object = tc.sample()
-    print(object)
+    tc = TextClassification()
+    name, path = tc.sample()
     tc.show(path)
     tc.read_input()

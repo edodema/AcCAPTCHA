@@ -1,10 +1,14 @@
 from flask import Flask, render_template, Response
+
 from src.finger_count.finger_captcha import FingerCAPTCHA
 from src.finger_count.video_capture import VideoCapture
 
+from src.image_classification.image_classification import ImageCAPTCHA
+
 app = Flask(__name__)
-# ! Refresh does not change the ground truth, move that into video(), yet it yields to wrong JSON reading.
+# ! Refresh does not change the ground truth, move that into video(), yet it yields the wrong JSON reading.
 finger_captcha = FingerCAPTCHA()
+# image_captcha = ImageCAPTCHA()
 
 
 @app.route("/")
@@ -39,6 +43,13 @@ def video():
     return Response(
         vc(finger_captcha.run), mimetype="multipart/x-mixed-replace; boundary=frame"
     )
+
+
+# * Image classification.
+@app.route("/image-classification")
+def image_classification():
+    image_captcha = ImageCAPTCHA()
+    return render_template("image_classification.html")
 
 
 # * Word reading.

@@ -9,7 +9,7 @@ let duration = 5 * 60;
 const path = "static/logs/finger_count.json";
 
 
-// * Function.
+// * Functions.
 // Display a countdown on screen.
 function countdown() {
     if (duration < 0) {

@@ -5,11 +5,11 @@ from pathlib import Path
 
 
 class WordSampler:
-    def __init__(self, path: Union[str, Path] = "./assets/words.json"):
+    def __init__(self, path: Union[str, Path] = "./gui/static/assets/words.json"):
         """Initialize object.
 
         Args:
-            path (Union[str, Path], optional): Path of the corpus file. Defaults to "./assets/words.json".
+            path (Union[str, Path], optional): Path of the corpus file. Defaults to "./gui/static/assets/words.json".
         """
         self.corpus = self.load_json(path)
         self.max = len(self.corpus) - 1
@@ -62,11 +62,11 @@ class WordSampler:
         f.close()
 
 
-if __name__ == "__main__":
-    HOME = Path(".")
-    ASSET = HOME / "assets"
-    JSON_FILE = ASSET / "words.json"
+# if __name__ == "__main__":
+#     HOME = Path(".")
+#     ASSET = HOME / "assets"
+#     JSON_FILE = ASSET / "words.json"
 
-    ws = WordSampler(JSON_FILE)
-    samples = ws.sample(10, unique=False)
-    print(samples)
+#     ws = WordSampler(JSON_FILE)
+#     samples = ws.sample(10, unique=False)
+#     print(samples)

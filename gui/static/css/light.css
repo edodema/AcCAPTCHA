@@ -132,3 +132,44 @@ button:hover {
     background-color: #18be26;
     text-decoration: underline;
 }
+
+/* * Radio button */
+/* input[type=radio] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+
+    position: relative;
+    top: 4px;
+}*/
+
+
+.radio input[type="radio"] {
+    display: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.radio label {
+    display: inline-block;
+    /* background-color: #ddd; */
+    padding: 30px 30px;
+    font-family: Arial;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #e02416;
+}
+
+.radio input[type="radio"]:checked+label {
+    background-color: #18be26;
+    font-weight: bold;
+}

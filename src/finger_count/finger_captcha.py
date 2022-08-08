@@ -6,6 +6,7 @@ import numpy as np
 
 from src.finger_count.finger_count import FingerCount
 from src.finger_count.video_capture import VideoCapture
+from src.utils.utils import save_json
 
 
 class FingerCAPTCHA:
@@ -73,7 +74,7 @@ class FingerCAPTCHA:
         # * Dictionary used to store log data.
         self.log_data = {"target": self.target, "passed": 0, "preds": []}
         # Save JSON, since we need to print the number.
-        self.save_json(path=self.log_path, data=self.log_data)
+        save_json(path=self.log_path, data=self.log_data)
 
         # * Accumulators to get the correct counts.
         self.counts = []
@@ -104,7 +105,7 @@ class FingerCAPTCHA:
         )
         if len(filtered) >= self.acceptance_threshold:
             self.log_data["passed"] = 1
-            self.save_json(path=self.log_path, data=self.log_data)
+            save_json(path=self.log_path, data=self.log_data)
         else:
             # TODO: Remove
             print(False, len(filtered), count, self.target)
@@ -187,13 +188,3 @@ class FingerCAPTCHA:
         print(out)
         test = (out - self.threshold) <= self.n and self.n <= (out + self.threshold)
         return test
-
-    def save_json(self, path: str, data: Dict):
-        """Save a dictionary as a JSON file.
-
-        Args:
-            path (str): Path where the file will be saved.
-            data (Dict): Log data as a dictionary.
-        """
-        with open(path, "w") as f:
-            json.dump(data, f, indent=-1)

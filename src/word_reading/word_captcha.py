@@ -7,7 +7,7 @@ from src.word_reading.word_sampler import WordSampler
 class WordCAPTCHA:
     def __init__(
         self,
-        path: Union[str, Path] = "./assets/words.json",
+        path: Union[str, Path] = "./gui/static/assets/words.json",
         num_words: int = 5,
         unique: bool = True,
         calibration_time: int = 1,
@@ -17,7 +17,7 @@ class WordCAPTCHA:
         """Initialize test.
 
         Args:
-            path (Union[str, Path], optional): JSON file path. Defaults to "./assets/words.json".
+            path (Union[str, Path], optional): JSON file path. Defaults to "./gui/static/assets/words.json".
             num_words (int, optional): Number of words to be sampled. Defaults to 5.
             unique (bool, optional): If true we sample words uniquely. Defaults to True.
             calibration_time (int, optional): Time needed to calibrate the microphone to noise ambient. Defaults to 1.
