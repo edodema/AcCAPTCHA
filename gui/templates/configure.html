@@ -13,24 +13,50 @@
     {% block content %}
 
     <!-- TODO: Write a decent introduction. -->
+    <!-- For par condicio we assume no one can do anything and people select what they are able to do -->
     <p>Select which modalities to use.</p>
 
     <!-- Checkboxes. -->
+    <!-- ? Not sure of what you can do without sight. -->
     <label for="sight" class="container">
         Sight
-        <input type="checkbox" id="sight" name="mode" value="yes" checked="checked">
+        <input type="checkbox" id="sight" name="mode" value="yes">
         <span class="checkmark"></span>
     </label>
 
     <label for="speech" class="container">
         Speech
-        <input type="checkbox" id="speech" name="mode" value="yes" checked="checked">
+        <input type="checkbox" id="speech" name="mode" value="yes">
+        <span class="checkmark"></span>
+    </label>
+
+    <label for="hearing" class="container">
+        Hearing
+        <input type="checkbox" id="hearing" name="mode" value="yes">
+        <span class="checkmark"></span>
+    </label>
+
+    <label for="keyboard" class="container">
+        Keyboard
+        <input type="checkbox" id="keyboard" name="mode" value="yes">
+        <span class="checkmark"></span>
+    </label>
+
+    <label for="mouse" class="container">
+        Mouse
+        <input type="checkbox" id="mouse" name="mode" value="yes">
+        <span class="checkmark"></span>
+    </label>
+
+    <label for="camera" class="container">
+        Camera
+        <input type="checkbox" id="camera" name="mode" value="yes">
         <span class="checkmark"></span>
     </label>
 
     <label for="gesture" class="container">
         Gesture
-        <input type="checkbox" id="gesture" name="mode" value="yes" checked="checked">
+        <input type="checkbox" id="gesture" name="mode" value="yes">
         <span class="checkmark"></span>
     </label>
 

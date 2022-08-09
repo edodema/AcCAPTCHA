@@ -36,12 +36,12 @@ def configure() -> str:
 
 
 # * Finger counting.
-@app.route("/finger-count")
+@app.route("/finger_count")
 def finger_count():
     return render_template("finger_count.html")
 
 
-@app.route("/finger-count/video")
+@app.route("/finger_count/video")
 def video():
     vc = VideoCapture()
     return Response(
@@ -50,24 +50,23 @@ def video():
 
 
 # * Image classification.
-@app.route("/image-classification")
+@app.route("/image_classification")
 def image_classification():
     image_captcha = ImageCAPTCHA()
     return render_template("image_classification.html")
 
 
 # * Text recognition.
-@app.route("/text-recognition")
+@app.route("/text_recognition")
 def text_recognition():
     text_captcha = TextCAPTCHA()
     return render_template("text_recognition.html")
 
 
 # * Word reading.
-# * Finger counting.
-@app.route("/word-reading")
-def word_reading():
-    return render_template("word_reading.html")
+# @app.route("/wordreading")
+# def word_reading():
+#     return render_template("word_reading.html")
 
 
 if __name__ == "__main__":
