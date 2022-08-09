@@ -20,7 +20,7 @@ class ImageCAPTCHA:
         self.data = self._load_data()
         self.log_path = log
 
-        # * Sample a point and save it.
+        # * Sample an image and save it.
         img_path, self.tgt = self.sample()
 
         # Sample false class.
