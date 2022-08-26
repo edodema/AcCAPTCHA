@@ -1,6 +1,5 @@
 from typing import *
 import random
-import json
 import cv2 as cv
 import numpy as np
 
@@ -172,19 +171,3 @@ class FingerCAPTCHA:
             thickness=self.thickness_roi,
         )
         return img
-
-    # TODO Don't think is needed, probably can remove.
-    def eval(self) -> bool:
-        """Test CAPTCHA outcome.
-
-        Returns:
-            bool: Test result.
-        """
-        if self.counts == []:
-            return False
-
-        out = np.mean(self.counts)
-
-        print(out)
-        test = (out - self.threshold) <= self.n and self.n <= (out + self.threshold)
-        return test

@@ -54,10 +54,3 @@ async function check_test() {
         window.location = window_alert;
     }
 }
-
-// ! Alternative that uses JQuery, should be bette but an internet connection is needed.
-// function show_target() {
-//     $.getJSON(path, function (json) {
-//         target.innerHTML = json.target;
-//     });
-// }

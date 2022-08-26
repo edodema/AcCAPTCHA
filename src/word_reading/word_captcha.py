@@ -116,10 +116,3 @@ class WordCAPTCHA:
             save_json(path=self.log_path, data=self.log_data)
         else:
             return test
-
-
-if __name__ == "__main__":
-    captcha = WordCAPTCHA()
-    captcha.sample()
-    captcha.listen()
-    captcha.eval()

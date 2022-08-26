@@ -44,3 +44,5 @@ Add a default setting in which we assume a user is totally able to use everythin
 - Explain what directories do, maybe with different readmes depedning on the subdir.
 - We also have pronunciation issues in voice recogn.
 - Future works gui
+
+## Installation

@@ -27,7 +27,6 @@ function check_mode() {
     // We want to be conservative, thus the user has to choose modalities explicitly.
     // ? Hearing is a bit problematic, how can you give an input to a computer?
     // ? Is sight necessary?
-    // TODO Add speech_recognition. 
     let tests = {
         finger_count: values.sight * values.camera * values.gesture,
         image_classification: values.sight * values.mouse,

@@ -46,24 +46,3 @@ class TextCAPTCHA:
             Tuple[str, str]: Text and image path.
         """
         return random.choice(list(self.data.items()))
-
-    def show(self, path: Union[str, Path]):
-        """Show an image.
-        # ! Not really needed, debug purposes only.
-        # TODO: Remove
-
-        Args:
-            path (Union[str, Path]): Image path.
-        """
-        img = mpimg.imread(path)
-        plt.imshow(img)
-        plt.show()
-
-    def read_input(self) -> str:
-        """Read user input.
-        # TODO Remove
-
-        Returns:
-            str: User input.
-        """
-        return input("Enter your value: ")

@@ -84,7 +84,3 @@ class WordRecognition:
             print("Was nable to recognize what said.")
         except sr.RequestError as e:
             print(f"Could not request results from Google Speech Recognition; {e}")
-
-
-if __name__ == "__main__":
-    spr = WordRecognition(verbose=True)

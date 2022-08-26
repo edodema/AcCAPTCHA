@@ -25,12 +25,10 @@ async function get_data() {
 
 function check_test() {
     if (tbox.value == obj.truth) {
-        // TODO: Page that says "the test is finished".
         alert("The test is passed. You will be redirected to the home page.");
     } else {
         alert("The test has not been passed. You will be redirected to the home page.");
     }
     // Go back to another page.
-    // TODO: I temporarily set the homepage.
     window.location = window_alert;
 }

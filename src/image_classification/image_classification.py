@@ -81,7 +81,7 @@ class ImageCAPTCHA:
 
     def show(self, path: Union[str, Path]):
         """Show an image.
-        # TODO Not really needed, debug purposes only.
+        # ! Debug purposes only.
 
         Args:
             path (Union[str, Path]): Image path.
@@ -92,16 +92,9 @@ class ImageCAPTCHA:
 
     def read_input(self) -> str:
         """Read user input.
-        # TODO Not really needed, debug purposes only.
+        # ! Debug purposes only.
 
         Returns:
             str: User input.
         """
         return input("Enter your value: ")
-
-
-if __name__ == "__main__":
-    tc = ImageCAPTCHA()
-    # path, object = tc.sample()
-    # tc.show(path)
-    # tc.read_input()

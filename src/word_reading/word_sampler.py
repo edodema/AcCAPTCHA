@@ -60,13 +60,3 @@ class WordSampler:
         f = open(path, "w")
         json.dump(obj, f, indent=-1)
         f.close()
-
-
-# if __name__ == "__main__":
-#     HOME = Path(".")
-#     ASSET = HOME / "assets"
-#     JSON_FILE = ASSET / "words.json"
-
-#     ws = WordSampler(JSON_FILE)
-#     samples = ws.sample(10, unique=False)
-#     print(samples)
