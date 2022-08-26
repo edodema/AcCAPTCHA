@@ -2,9 +2,9 @@ from flask import Flask, render_template, Response
 
 from src.finger_count.finger_captcha import FingerCAPTCHA
 from src.finger_count.video_capture import VideoCapture
-
 from src.image_classification.image_classification import ImageCAPTCHA
 from src.text_recognition.text_recognition import TextCAPTCHA
+from src.word_reading.word_captcha import WordCAPTCHA
 
 # TODO Maybe add parsing options and pass them to constructors
 #  rather than always using default values
@@ -12,6 +12,8 @@ from src.text_recognition.text_recognition import TextCAPTCHA
 app = Flask(__name__)
 # ! Refresh does not change the ground truth, move that into video(), yet it yields the wrong JSON reading.
 finger_captcha = FingerCAPTCHA()
+word_captcha = WordCAPTCHA()
+# TODO Remove
 # image_captcha = ImageCAPTCHA()
 
 
@@ -59,14 +61,23 @@ def image_classification():
 # * Text recognition.
 @app.route("/text_recognition")
 def text_recognition():
+    # TODO Remove assignment.
     text_captcha = TextCAPTCHA()
     return render_template("text_recognition.html")
 
 
 # * Word reading.
-# @app.route("/wordreading")
-# def word_reading():
-#     return render_template("word_reading.html")
+@app.route("/word_reading")
+def word_reading():
+    word_captcha.sample()
+    return render_template("word_reading.html")
+
+
+@app.route("/word_record")
+def word_record():
+    word_captcha.listen()
+    word_captcha.eval()
+    return render_template("word_record.html")
 
 
 if __name__ == "__main__":

@@ -32,6 +32,7 @@ function check_mode() {
         finger_count: values.sight * values.camera * values.gesture,
         image_classification: values.sight * values.mouse,
         text_recognition: values.sight * values.keyboard,
+        word_reading: values.sight * values.speech * values.microphone
     };
 
     // Get methods that can be used.
