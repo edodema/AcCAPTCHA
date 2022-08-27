@@ -1,7 +1,38 @@
 \section{Introduction}
+Nowadays when surfing the web CAPTCHA tests are everywhere, to the point we are used to get asked to prove our humanity and something is off when it does not happen.
+Furthermore, technology moves forwards and tests are becoming increasignly harder, while it may be a nuisance for the abled it can often be a barrier for people with disabilities.
+It is a priority to develop reliable CAPTCHA tests designed to be accessible to everyone.
 
 \subsection{Historical background}
+The word CAPTCHA stands for \emph{Completely Automated Public Turing test to tell Computers and Humans Apart}.
+In the year 2000 during a speaking at Carnegie Mellow University held by YAHOO!, at the time one of the world's biggest companies, they listed the ten most relevant problems they did not know hot to solve; among these issues stood out that spammers would write programs to automatically generate mails, and use them for malicious purposes~\cite{vox2021captcha,theverge2019captcha}.
+The world needed a test to distinguish humans from computers such that any human, regardless of age, gender, education or language could pass it.
+To make things even more difficult, the CAPTCHA test is born from a paradoxical idea: any computer should be able to grade it but should not be able to pass it, like if a teacher could grade students' exams without knowing the subject.
+
+\paragraph{CAPTCHA}
+The idea exposed in \cite{vonahn2003captcha} is based on the fact that humans are extremely good at pattern and optical character recognition i.e., reading, and we
+generally learn to do it since we are kids and can do it under many circumstances like bad lighting and other.
+A text is took and warped, stretched or generally modified in some way such tha computer vision techniques at the time could not read it, yet the computer with the gold truth just has to match it with the user's input.
+Once released CAPTCHA has been used to authenticate access to YAHOO! mail services.
+
+\paragraph{reCaptcha}
+All the character input by humans into CAPTCHA gave new data that made computers smarter.
+The new versione, reCAPTCHA~\cite{ahn2008recaptcha}, uses two words: one generated so the compute knows the answer and the other pulled from a book or originally a \emph{The New York Times}' old article, both of which are distorted.
+When a human gets the first word right the system guesses the second one is probably right and distributes it across different users, if there is consensus then it is approved.
+So many tests were done that something along one year of NY Times articles was digitalized every 4 days, this led Google to acquire reCAPTCHA in 2009 and exploit it to digitalize texts in its archive.
+When you do that enought times you get a big enough dataset of distorted characters that computers can effectively learn how to read them, in a way CAPTCHA taught machines how to read highly warped texts, in a 2014 machine learning study Google stated how humans have a 33\% accuracy on recognizing CAPTCHA's warped characters while a trained machine has 99.8\%.
+
+\paragraph{reCAPTCHAv2}
+Given the huge potential reCAPTCHA showed to have, Google exploited it to have human users classify images and build up a data, that were later used to improve Google Maps~\cite{vox2021captcha}.
+Again, computers eventually became good enough on images that reCAPTCHAv2 is not enough anymore.
+
+\paragraph{NoCAPTCHA reCAPTCHAv3}
+Computers changed and tests have to change as well, NoCAPTCHA and reCAPTCHAv3
+% TODO 
+% https://security.googleblog.com/2014/12/are-you-robot-introducing-no-captcha.html
+% https://security.googleblog.com/2014/04/street-view-and-recaptcha-technology.html
 
 \subsection{Description}
 
 \subsection{Requirements}
+Requirements like what is needed programming
