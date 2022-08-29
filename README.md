@@ -1,35 +1,10 @@
-# BeCAPTCHA
-
-## ToDO
-### Interface
-The interface should allow users to configure what devices and modalities they can support when first started, optionally to reconfigure it.
-E.g. sight, hearing, keyboard + mouse.
-Add a default setting in which we assume a user is totally able to use everything.
-- Get the correct modalities.
-- Implement test for modalities
-- Finger count based on modalities.
-- Make it quite big and add a zoom slider.
-- Favicon
-- Dyslexia font, dark mode, invert color.
-- search for colorblind colors, add checkboxes for that too maybe or use a universal colorbind palette (worst case)
-
-### Sight
-- Classification
-- Identification
-
-### Hearing
-- Which sound is louder?
-- Classify a sound
-- Say something you heard.
+# AcCAPTCHA
 
 ### Speech
 - Recall to install in Docker the correct dependencies: [https://pypi.org/project/SpeechRecognition/#Requirements](https://pypi.org/project/SpeechRecognition/#Requirements)
 #### Read something aloud.
-- Use distorted words
 - We should generate n words and do not care about order.
 
-### Gesture
-- Move your head or face into a specific box, box may have different colors.
 #### Finger counting.
 - You should hold your position for some seconds and have a mean to get an answer.
 - If it may be too difficult to select a ROI of the correct size you could select a dimension for a given aspect ratio or optionally use quadrants, otherwise pick the dimension of a quadrant and pick it randomly.
@@ -43,6 +18,16 @@ Add a default setting in which we assume a user is totally able to use everythin
 - Dialog for many fingers.
 - Explain what directories do, maybe with different readmes depedning on the subdir.
 - We also have pronunciation issues in voice recogn.
-- Future works gui
+- Add a default setting in which we assume a user is totally able to use everything.
+- scripts to build a docker image.
+
+### Future works
+- Save user configuration as cookies.
+- more accessible and customizable gui for colorblind people.
+- Dyslexia font, dark mode, invert color.
+- search for colorblind colors, add checkboxes for that too maybe or use a universal colorbind palette (worst case)
+- Hearing
+- Move your head or face into a specific box, box may have different colors.
+
 
 ## Installation

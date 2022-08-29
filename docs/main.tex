@@ -1,11 +1,18 @@
 \documentclass{article}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption, subcaption}
+\usepackage[dvipsnames]{xcolor}
 % \usepackage[backend=bibtex, style=alphabetic, sorting=ynt]{biblatex}
 \usepackage{biblatex}
 % \usepackage{enumitem}
 \addbibresource{main.bib}
 
-\title{BeCAPTCHA}
+% * Commands
+\newcommand{\todo}[1]{\colorbox{BurntOrange}{\textcolor{white}{#1}}}
+\newcommand{\name}[0]{AcCAPTCHA}
+
+\title{\name}
 \author{Edoardo De Matteis}
 \date{}
 
@@ -17,6 +24,7 @@
 
 % \input{modules/abstract.tex}
 \input{modules/introduction.tex}
+\input{modules/methodology.tex}
 % \input{modules/glossary.tex}
 % \input{modules/requirements.tex}
 % \input{modules/actors.tex}
@@ -24,10 +32,11 @@
 % \input{modules/activities.tex}
 % \input{modules/classes.tex}
 % \input{modules/test.tex}
-% \input{modules/interface.tex}
+\input{modules/interface.tex}
 % \input{modules/conclusion.tex}
 
 % References
+\clearpage
 \printbibliography
 
 \end{document}

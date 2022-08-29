@@ -1,0 +1,16 @@
+\section{Methodology}
+I propose \name, a starting point for an accessible CAPTCHA system, such that the user selects what they can do and are then subjected to a corresponding test.
+The system is accessible through a browser\footnote{It is per now not on the internet and can be accessed only locally.}, as it would be realistically desired, and currently supports the following tests:
+
+\paragraph{Text recognition}
+A classical text recognition, as in CAPTCHA and ReCAPTCHA, in which the user reads a warped text and has to input it to the system, see figure \ref{fig:gui:text_recognition}.
+Data were collected from \cite{wilhemy2013dataset,gregwar2022captcha} and we perform a simple text matching.
+
+\paragraph{Image classification}
+One of Luis von Ahn's original ideas for CAPTCHA was to show some image to the user and have them describe it, yet humans proved to be very bad; as an example, given an image of a car people would also say something like "tires", "vehicle", "automobile" and so on, and they would all be correct.
+Taking inspiration from that I set the up a closed-response object classification task as in figure \ref{fig:gui:image_classification}, images are took from the \emph{Natural Images} dataset used in \cite{roy2018deep}
+
+% \paragraph{Configuration}
+
+% \subsubsection{Requirements}
+% Requirements like what is needed programming

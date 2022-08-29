@@ -1,9 +1,12 @@
 .DS_Store
 __pycache__
 
-*.json
+gui/static/assets/captcha
+gui/static/assets/images
+gui/static/assets/*.xz
+gui/static/assets/*.json
 
-assets/
+gui/static/logs/*.json
 venv/
 
 ### TeX ###
