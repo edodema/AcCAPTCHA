@@ -10,7 +10,17 @@ Data were collected from \cite{wilhemy2013dataset,gregwar2022captcha} and we per
 One of Luis von Ahn's original ideas for CAPTCHA was to show some image to the user and have them describe it, yet humans proved to be very bad; as an example, given an image of a car people would also say something like "tires", "vehicle", "automobile" and so on, and they would all be correct.
 Taking inspiration from that I set the up a closed-response object classification task as in figure \ref{fig:gui:image_classification}, images are took from the \emph{Natural Images} dataset used in \cite{roy2018deep}
 
+\paragraph{Finger counting}
+The two previous tasks are highly dependend on sight and do not add any accessibility to the system, thus we include a behavioral task: the user is shown a number and a rectangle on the screen and is asked to replicate it with their fingers, if they do it correctly for a customizable interval of time then the test is passed.
+Hand pose prediction is done through \emph{MMPOSE}~\cite{mmpose}
+
+
+% Regardless of how you show them.
+
+\paragraph{Word reading}
 % \paragraph{Configuration}
+
+% TODO Difficulty for robots to replicate results 
 
 % \subsubsection{Requirements}
 % Requirements like what is needed programming
