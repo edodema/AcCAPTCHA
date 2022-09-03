@@ -1,0 +1,7 @@
+@startuml system
+actor User as user
+entity System as system
+
+user -> system: Starts the system
+@enduml
+

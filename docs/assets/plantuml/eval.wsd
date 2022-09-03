@@ -1,4 +1,0 @@
-@startuml eval
-(*) -right-> "The system compares the answers with the truth"
-"The system compares the answers with the truth" -right-> (*)
-@enduml

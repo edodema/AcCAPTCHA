@@ -1,0 +1,4 @@
+@startuml microphone
+(*) -right-> "The microphone records the voice"
+"The microphone records the voice" -right-> (*)
+@enduml

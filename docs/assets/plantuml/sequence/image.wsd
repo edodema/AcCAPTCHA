@@ -1,0 +1,7 @@
+@startuml image
+actor User as user
+entity System as system
+
+user <- system: Shows image
+user --> system: Submits the selected class
+@enduml

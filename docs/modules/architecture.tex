@@ -16,6 +16,182 @@ The actors in the system are the ones in table \ref{tab:actors}.
     \end{tabular}
 \end{table}
 
+% * Requirements.
+% \clearpage
+\subsection{Requirements}
+Requirements are classified based on their priority: \emph{mandatory} or \emph{recommended} and \emph{desirable}.
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Configure system} requirement.}
+    \label{tab:req:configure}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ01F                                                                                                      \\
+        \textbf{Usecase}     & Configure system                                                                                            \\
+        \textbf{Type}        & Functional                                                                                                  \\
+        \textbf{Priority}    & Mandatory                                                                                                   \\
+        \textbf{Description} & The user should be able to manage which tests will be performed, based on their accessibility requirements.
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Text recognition} requirement.}
+    \label{tab:req:text}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ02F                                                                    \\
+        \textbf{Usecase}     & Text recognition                                                          \\
+        \textbf{Type}        & Functional                                                                \\
+        \textbf{Priority}    & Mandatory                                                                 \\
+        \textbf{Description} & The user should be able to be subjected to a CAPTCHA-like automated test.
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Image classification} requirement.}
+    \label{tab:req:image}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ03F                                                                             \\
+        \textbf{Usecase}     & Image classification                                                               \\
+        \textbf{Type}        & Functional                                                                         \\
+        \textbf{Priority}    & Mandatory                                                                          \\
+        \textbf{Description} & The user should be able to be subjected to an image classification automated test.
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Finger counting} requirement.}
+    \label{tab:req:finger}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ04F                                                                 \\
+        \textbf{Usecase}     & Finger counting                                                        \\
+        \textbf{Type}        & Functional                                                             \\
+        \textbf{Priority}    & Recommended                                                            \\
+        \textbf{Description} & The user should be able to a behavioral finger countng automated test.
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Word reading} requirement.}
+    \label{tab:req:word}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ05F                                                                                 \\
+        \textbf{Usecase}     & Word reading                                                                           \\
+        \textbf{Type}        & Functional                                                                             \\
+        \textbf{Priority}    & Recommended                                                                            \\
+        \textbf{Description} & The user should be able to be subjected to word reading speech-to-text automated test.
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Word reading} requirement.}
+    \label{tab:req:hearing}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ06F                                                                    \\
+        \textbf{Usecase}     & Hearing                                                                   \\
+        \textbf{Type}        & Functional                                                                \\
+        \textbf{Priority}    & Desirable                                                                 \\
+        \textbf{Description} & The user should be able to be subjected to a word hearing automated test.
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Web access} requirement.}
+    \label{tab:req:access:web}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ07NF                                                              \\
+        \textbf{Usecase}     & Web access                                                           \\
+        \textbf{Type}        & Non functional                                                       \\
+        \textbf{Priority}    & Desirable                                                            \\
+        \textbf{Description} & The user should be able to easily access the system through the web.
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Client access} requirement.}
+    \label{tab:req:access:client}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ08NF                                                               \\
+        \textbf{Usecase}     & Client access                                                         \\
+        \textbf{Type}        & Non functional                                                        \\
+        \textbf{Priority}    & Desirable                                                             \\
+        \textbf{Description} & The user should be able to easily access the system through a client.
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Portability} requirement.}
+    \label{tab:req:portability}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ09NF                                                                  \\
+        \textbf{Usecase}     & Portability                                                              \\
+        \textbf{Type}        & Non functional                                                           \\
+        \textbf{Priority}    & Desirable                                                                \\
+        \textbf{Description} & The system should work both on desktop and mobile, on the main browsers:
+        \begin{itemize}
+            \item \emph{Google Chrome} 105.0.5195.102
+            \item \emph{Microsoft Edge} 100.0.1185.50
+            \item \emph{Mozilla Firefox} 104.0.1
+            \item \emph{Opera} 90.0.4480.80
+            \item \emph{Safari} 15.6.1
+        \end{itemize}
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Performance} requirement.}
+    \label{tab:req:performance}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ10NF                                                           \\
+        \textbf{Usecase}     & Performance                                                       \\
+        \textbf{Type}        & Non functional                                                    \\
+        \textbf{Priority}    & Desirable                                                         \\
+        \textbf{Description} & The system should be fast enough to be easily usable by the user.
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!t]
+    \centering
+    \caption{\emph{Customization} requirement.}
+    \label{tab:req:customization}
+    \centering
+    \begin{tabular}{l | p{80mm}}
+        \textbf{Id}          & REQ11NF                                                                                                                                  \\
+        \textbf{Usecase}     & Customization                                                                                                                            \\
+        \textbf{Type}        & Non functional                                                                                                                           \\
+        \textbf{Priority}    & Desirable                                                                                                                                \\
+        \textbf{Description} & The system should allow the user to select the appearance of the system, more precisely the following color-palette should be available:
+        \begin{itemize}
+            \item Light theme.
+            \item Dark theme.
+            \item Black and white.
+            \item Protanopia.
+            \item Deuteranopia.
+            \item Tritanopia.
+        \end{itemize}
+    \end{tabular}
+\end{table}
+
+% * Usecases
+\clearpage
 \subsection{Use cases}
 We show in figure \ref{fig:usecase:diagram} the usecase diagram, tables \ref{tab:uc:system}-\ref{tab:uc:microphone} describes usecases and figures \ref{fig:activity:start}-\ref{fig:activity:microphone} are the respective activity diagrams.
 
@@ -45,7 +221,7 @@ We show in figure \ref{fig:usecase:diagram} the usecase diagram, tables \ref{tab
         \textbf{Events}        & \begin{enumerate}
             \item The user starts the client.
             \item The user presses the "start" button.
-        \end{enumerate}       \\
+        \end{enumerate}      \\
         \textbf{Postcondition} & The system has started.
     \end{tabular}
 \end{table}
@@ -65,7 +241,7 @@ We show in figure \ref{fig:usecase:diagram} the usecase diagram, tables \ref{tab
             \item The user selects which checkboxes they want to be true.
             \item The user presses the "submit" button.
             \item The system shows a test to the user.
-        \end{enumerate}                                                           \\
+        \end{enumerate}                                                          \\
         \textbf{Postcondition} & The user has been submitted to a test.
     \end{tabular}
 \end{table}
@@ -87,7 +263,7 @@ We show in figure \ref{fig:usecase:diagram} the usecase diagram, tables \ref{tab
             \item The user submits the answer.
             \item The system evaluates the output.
             \item The system redirects the user to the home page.
-        \end{enumerate}                            \\
+        \end{enumerate}                           \\
         \textbf{Postcondition} & The user has passed or not the test.
     \end{tabular}
 \end{table}
@@ -109,7 +285,7 @@ We show in figure \ref{fig:usecase:diagram} the usecase diagram, tables \ref{tab
             \item The user selects submit.
             \item The system evaluates the output.
             \item The system redirects the user to the home page.
-        \end{enumerate}                            \\
+        \end{enumerate}                           \\
         \textbf{Postcondition} & The user has passed or not the test.
     \end{tabular}
 \end{table}
@@ -128,10 +304,10 @@ We show in figure \ref{fig:usecase:diagram} the usecase diagram, tables \ref{tab
         \textbf{Events}             & \begin{enumerate}
             \item The system shows a number and to the user.
             \item The system opens the webcam with a coloured region-of-interest.
-            \item The user shows the number with their hand inside the ROI.
+            \item The user shows the number with their hand inside the RoI.
             \item The system waits for a custom number of correct guesses.
             \item The system redirects the user to the home page.
-        \end{enumerate}                            \\
+        \end{enumerate}                           \\
         \textbf{Postcondition}      & The user has passed or not the test.                 \\
         \textbf{Alternative events} & \begin{enumerate}
             \setcounter{enumi}{3}
@@ -158,7 +334,7 @@ We show in figure \ref{fig:usecase:diagram} the usecase diagram, tables \ref{tab
             \item The system converts the speech to text.
             \item The system matches the converted text with ground truth words.
             \item The system redirects the user to the home page.
-        \end{enumerate}                            \\
+        \end{enumerate}                           \\
         \textbf{Postcondition} & The user has passed or not the test.
     \end{tabular}
 \end{table}
@@ -264,94 +440,139 @@ We show in figure \ref{fig:usecase:diagram} the usecase diagram, tables \ref{tab
 \subsubsection{Activity diagrams}
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/system.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/system.pdf}
     \caption{\emph{Start system} activity diagram.}
     \label{fig:activity:start}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/test.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/test.pdf}
     \caption{\emph{Start test} activity diagram.}
     \label{fig:activity:test}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/text.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/text.pdf}
     \caption{\emph{Text recognition} activity diagram.}
     \label{fig:activity:text}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/image.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/image.pdf}
     \caption{\emph{Image classification} activity diagram.}
     \label{fig:activity:image}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/finger.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/finger.pdf}
     \caption{\emph{Finger counting} activity diagram.}
     \label{fig:activity:finger}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/word.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/word.pdf}
     \caption{\emph{Word reading} activity diagram.}
     \label{fig:activity:word}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/eval.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/eval.pdf}
     \caption{\emph{Test evaluation} activity diagram.}
     \label{fig:activity:eval}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/sampler.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/sampler.pdf}
     \caption{\emph{Sampler} activity diagram.}
     \label{fig:activity:sampler}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/hand.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/hand.pdf}
     \caption{\emph{Hand recognition} activity diagram.}
     \label{fig:activity:hand}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/video.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/video.pdf}
     \caption{\emph{Video capture} activity diagram.}
     \label{fig:activity:video}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/speech.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/speech.pdf}
     \caption{\emph{Speech-to-text} activity diagram.}
     \label{fig:activity:speech}
 \end{figure}
 
 \begin{figure}[h!t]
     \centering
-    \includegraphics[scale=0.8]{assets/plantuml/pdf/microphone.pdf}
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/activity/microphone.pdf}
     \caption{\emph{Microphone capture} activity diagram.}
     \label{fig:activity:microphone}
 \end{figure}
 
 % * Class diagram
 \clearpage
-\subsection{Class diagram}
+\subsubsection{Class diagram}
 \begin{figure}[h!t]
     \centering
     \includegraphics[scale=0.65]{assets/plantuml/pdf/class.pdf}
     \caption{Class diagram.}
     \label{fig:class:diagram}
+\end{figure}
+
+% * Sequence diagrams
+\clearpage
+\subsubsection{Sequence diagrams}
+\begin{figure}[h!t]
+    \centering
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/sequence/system.pdf}
+    \caption{\emph{Start system} sequence diagram.}
+    \label{fig:sequence:start}
+\end{figure}
+
+\begin{figure}[h!t]
+    \centering
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/sequence/test.pdf}
+    \caption{\emph{Start test} sequence diagram.}
+    \label{fig:sequence:test}
+\end{figure}
+
+\begin{figure}[h!t]
+    \centering
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/sequence/text.pdf}
+    \caption{\emph{Text recognition} sequence diagram.}
+    \label{fig:sequence:text}
+\end{figure}
+
+\begin{figure}[h!t]
+    \centering
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/sequence/image.pdf}
+    \caption{\emph{Image classification} sequence diagram.}
+    \label{fig:sequence:image}
+\end{figure}
+
+\begin{figure}[h!t]
+    \centering
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/sequence/finger.pdf}
+    \caption{\emph{Finger counting} sequence diagram.}
+    \label{fig:sequence:finger}
+\end{figure}
+
+\begin{figure}[h!t]
+    \centering
+    \includegraphics[scale=0.8]{assets/plantuml/pdf/sequence/word.pdf}
+    \caption{\emph{Word reading} sequence diagram.}
+    \label{fig:sequence:word}
 \end{figure}

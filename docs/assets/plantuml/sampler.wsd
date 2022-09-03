@@ -1,4 +1,0 @@
-@startuml sampler
-(*) -right-> "The system samples data randomly"
-"The system samples data randomly" -right-> (*)
-@enduml

@@ -1,6 +1,0 @@
-@startuml test
-(*) -right-> "The user selects the\naccessibility checkboxes"
-"The user selects the\naccessibility checkboxes" -right-> "The user submits\ntheir selection"
-"The user submits\ntheir selection" --> "The systems selects a test"
-"The systems selects a test" -left-> (*)
-@enduml

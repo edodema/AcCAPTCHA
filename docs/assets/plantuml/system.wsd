@@ -1,6 +1,0 @@
-@startuml system
-(*) -right-> "The user starts the system"
-"The user starts the system" -right-> "The user presses the start button"
-"The user presses the start button" --> "The system configuration starts"
-"The system configuration starts" -left-> (*)
-@enduml

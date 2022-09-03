@@ -1,4 +1,0 @@
-@startuml video
-(*) -right-> "The camera shows the live video"
-"The camera shows the live video" -right-> (*)
-@enduml

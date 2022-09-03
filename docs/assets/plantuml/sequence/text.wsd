@@ -1,0 +1,7 @@
+@startuml text
+actor User as user
+entity System as system
+
+user <- system: Shows CAPTCHA-like image
+user --> system: Submits the text into the box
+@enduml

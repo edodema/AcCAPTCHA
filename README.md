@@ -36,4 +36,5 @@
 
 ## Requirements
 - Python
-- 
+
+languages i use

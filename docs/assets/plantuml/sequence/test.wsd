@@ -1,0 +1,10 @@
+@startuml test
+actor User as user
+entity System as system
+
+user -> system: Configures the system
+user <- system: Visual feedback
+user -> system: Submits selection
+@enduml
+
+

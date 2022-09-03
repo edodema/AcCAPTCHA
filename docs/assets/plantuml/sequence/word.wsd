@@ -1,0 +1,14 @@
+@startuml word
+actor User as user
+entity System as system
+entity Microphone as mic
+actor "Google Speech API" as google
+
+user <- system: Shows words
+user -> system: Press record buttons
+system -> mic: Start recording 
+mic -> google: Return recorded voice
+system <-- google: Convert speech to text
+system -> system: Evaluates test
+@enduml
+

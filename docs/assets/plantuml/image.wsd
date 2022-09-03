@@ -1,8 +1,0 @@
-@startuml image
-(*) -right-> "The system shows an\nimage to the user"
-"The system shows an\nimage to the user" -right-> "The user selects\na class"
-"The user selects\na class" -right-> "The user submits\ntheir answer"
-"The user submits\ntheir answer" --> "The system tests\nthe answer"
-"The system tests\nthe answer" -left-> "The system redirect the\nuser to the home page"
-"The system redirect the\nuser to the home page" -left-> (*)
-@enduml

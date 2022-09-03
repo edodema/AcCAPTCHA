@@ -1,4 +1,0 @@
-@startuml speech
-(*) -right-> "The Google Speech API converts speech to text"
-"The Google Speech API converts speech to text" -right-> (*)
-@enduml

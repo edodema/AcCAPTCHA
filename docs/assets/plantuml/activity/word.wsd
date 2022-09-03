@@ -1,0 +1,9 @@
+@startuml word
+(*) -right-> "The system shows some\nwords to the user"
+"The system shows some\nwords to the user" -right-> "The user presses the\n record button"
+"The user presses the\n record button" -right-> "The user records\nthe words"
+"The user records\nthe words" --> "The system converts\nspeech to text"
+"The system converts\nspeech to text" -left-> "The system tests\nthe answer"
+"The system tests\nthe answer" -left-> "The system redirect the\nuser to the home page"
+"The system redirect the\nuser to the home page" -left-> (*)
+@enduml

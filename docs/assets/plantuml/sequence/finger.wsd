@@ -1,0 +1,15 @@
+@startuml finger
+actor User as user
+entity System as system
+entity Camera as camera
+actor MMPOSE as mmpose
+
+user <<- system: Shows number and timer
+system <<- camera: Shows video
+user <- system: Shows video with RoI
+user --> mmpose: Shows hand
+system <-- mmpose: Recognizes hand 
+system -> system: Count fingers
+system -> system: Evaluates test
+@enduml
+
