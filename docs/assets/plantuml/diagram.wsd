@@ -1,0 +1,55 @@
+@startuml diagram
+left to right direction
+' Actors
+actor "User" as user 
+actor "MMPOSE" as mmpose
+actor "Google Speech API" as google 
+
+' Use cases
+usecase "Start\nsystem" as start
+' usecase "Configure\naccessibility" as configure 
+usecase "Start\ntest" as test
+
+usecase "Finger\ncounting" as finger
+usecase "Image\nclassification" as image
+usecase "Text\nrecognition" as text
+usecase "Word\nreading" as word
+
+usecase "Test\nevaluation" as eval
+usecase "Sampler" as sampler
+
+usecase "Hand\nrecognition" as hand
+usecase "Video\ncapture" as video
+
+usecase "Speech-to-text" as speech2text
+usecase "Microphone capture" as mic
+
+' Diagram
+user -- start
+user -- test
+
+test <.. finger : <<extends>>
+test <.. image : <<extends>>
+test <.. text : <<extends>>
+test <.. word : <<extends>>
+
+finger ..> sampler : <<include>>
+image ..> sampler : <<include>>
+text ..> sampler : <<include>>
+word ..> sampler : <<include>>
+
+finger ..> eval : <<include>>
+image ..> eval : <<include>>
+text ..> eval : <<include>>
+word ..> eval : <<include>>
+
+finger .up.> hand : <<include>>
+hand ..> video : <<include>>
+mmpose -- hand
+
+word .right.> speech2text : <<include>>
+speech2text ..> mic : <<include>>
+google -- speech2text
+
+
+@enduml

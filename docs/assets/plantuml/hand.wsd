@@ -1,0 +1,4 @@
+@startuml hand
+(*) -right-> "MMPOSE recognizes recognizes an hand"
+"MMPOSE recognizes recognizes an hand" -right-> (*)
+@enduml

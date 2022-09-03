@@ -1,0 +1,11 @@
+@startuml finger
+(*) -right-> "The system shows a\nnumber to the user"
+"The system shows a\nnumber to the user" -right-> "The system opens a\nwebcam with a ROI"
+
+if "The user shows the\nnumber with their hand" then
+    -left-> [Enough correct guesses] "The system redirects the\nuser to the home page"
+else
+    -left-> [Timeout] "The system redirects the\nuser to the home page"
+endif
+"The system redirects the\nuser to the home page" -left-> (*)
+@enduml
