@@ -1,6 +1,8 @@
 .DS_Store
 __pycache__
 
+assets/captcha.tar.xz
+assets/images.tar.xz
 gui/static/assets/captcha
 gui/static/assets/images
 gui/static/assets/*.xz
