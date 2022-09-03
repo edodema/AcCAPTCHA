@@ -1,3 +1,107 @@
 @startuml class
-class           class
-@enduml
+' Classes
+class FingerCAPTCHA {
++ width
++ height
++ threshold
++ n_fingers
++ color_roi
++ thickness_roi
++ log_path
++ acceptance_threshold
++ finger_count
++ corners
++ target
++ log_data
++ counts
++ run()
++ sample_number()
++ sample_corners()
++ draw_roi()
+}
+
+class FingerCount {
++ hands
++ thumb
++ fingers
++ rgb
++ size
++ color
++ thicknes
++ line
++ draw
++ display
++ run()
++ get_keypoints()
++ count_fingers()
+}
+
+class VideoCapture {
++ vid
++ esc
++ run()
+}
+
+class ImageCAPTCHA {
++ path
++ data
++ log_path
++ tgt
++ log_data
+- load_data()
++ sample()
++ get_random_options()
++ show()
++ read_input()
+}
+
+class TextCAPTCHA {
++ path
++ data
++ tgt
++ log_data
+- load_data()
++ sample()
+}
+
+class WordCAPTCHA {
++ verbose
++ threshold
++ log_path
++ web
++ ws
++ n
++ unique
++ wr
++ out
++ log_data
++ sample()
++ listen()
++ run()
++ eval()
+}
+
+class WordRecognition {
++ recognizer
++ microphone
++ run()
++ listen()
++ recognize()
++ google()
+}
+
+class WordSampler {
++ corpus
++ max
++ sample()
++ load_json()
++ save_json()
+}
+
+' Relations
+FingerCAPTCHA <-- FingerCount
+FingerCount <-- VideoCapture
+
+WordCAPTCHA <-- WordRecognition
+WordRecognition <-- WordSampler
+@enduml#
