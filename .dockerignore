@@ -1,8 +1,0 @@
-.DS_Store
-.gitkeep
-__pycache__
-
-docs/
-gui/static/assets/*
-gui/static/logs/*
-scripts/

@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption, subcaption}
+\usepackage[dvipsnames]{xcolor}
+% \usepackage[backend=bibtex, style=alphabetic, sorting=ynt]{biblatex}
+\usepackage{biblatex}
+% \usepackage{enumitem}
+\addbibresource{main.bib}
+
+% * Commands
+\newcommand{\todo}[1]{\colorbox{BurntOrange}{\textcolor{white}{#1}}}
+\newcommand{\name}[0]{AcCAPTCHA}
+
+\title{\name}
+\author{Edoardo De Matteis}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\clearpage
+
+% ! Include adds a clearpage.
+\include{modules/introduction}
+\include{modules/methodology}
+\include{modules/architecture}
+\include{modules/interface}
+\include{modules/conclusion}
+
+% References
+\printbibliography
+
+\end{document}

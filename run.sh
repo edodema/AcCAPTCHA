@@ -1,0 +1,1 @@
+PYTHONPATH=. python gui/main.py
